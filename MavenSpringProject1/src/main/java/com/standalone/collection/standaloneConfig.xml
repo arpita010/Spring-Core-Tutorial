@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<util:list list-class="java.util.LinkedList" id="subList">
+		<ref bean="s1" />
+		<ref bean="s2" />
+		<ref bean="s3" />
+	</util:list>
+	<util:map map-class="java.util.HashMap" id="marksList">
+	<entry key="501" value="50" />
+	<entry key="502" value="100" />
+	<entry key="503" value="88" />
+	</util:map>
+	
+	
+	<bean class="com.standalone.collection.Subject" name="s1">
+		<property name="subId" value="501" />
+		<property name="subName" value="dbms" />
+	</bean>
+	<bean class="com.standalone.collection.Subject" name="s2">
+		<property name="subId" value="502" />
+		<property name="subName" value="cd" />
+	</bean>
+	<bean class="com.standalone.collection.Subject" name="s3">
+		<property name="subId" value="503" />
+		<property name="subName" value="daa" />
+	</bean>
+	
+	<bean class="com.standalone.collection.Course" name="c1">
+		<property name="cid" value="111"/>
+		<property name="courseName" value="BTech"/>
+		<property name="subjects">
+		<ref bean="subList"/>
+		</property>
+		<property name="marks">
+		<ref bean="marksList"/>
+		</property>
+	</bean>
+</beans>

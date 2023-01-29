@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.springcore.collections.Project" name="p1">
+		<property name="projectId" value="1" />
+		<property name="projectName" value="project 1" />
+	</bean>
+
+	<bean class="com.springcore.collections.Project" name="p2">
+		<property name="projectId" value="2" />
+		<property name="projectName" value="project 2" />
+	</bean>
+	<bean class="com.springcore.collections.Project" name="p3">
+		<property name="projectId" value="3" />
+		<property name="projectName" value="project 3" />
+	</bean>
+	<bean class="com.springcore.collections.Project" name="p4">
+		<property name="projectId" value="4" />
+		<property name="projectName" value="project 4" />
+	</bean>
+	<bean class="com.springcore.collections.Project" name="p5">
+		<property name="projectId" value="5" />
+		<property name="projectName" value="project 5" />
+	</bean>
+
+	<!-- setting values using p schema -->
+	<bean class="com.springcore.collections.Project" p:projectId="6"
+		p:projectName="project 6" name="p6"></bean>
+	<!-- employee beans -->
+	<bean class="com.springcore.collections.Employee" name="e1">
+		<property name="eid" value="1" />
+		<property name="eName" value="Employee 1" />
+		<property name="projects">
+			<list>
+				<ref bean="p1" />
+				<ref bean="p2" />
+				<ref bean="p3" />
+			</list>
+		</property>
+
+	</bean>
+	<bean class="com.springcore.collections.Employee" name="e2">
+		<property name="eid" value="2" />
+		<property name="eName" value="Employee 2" />
+		<property name="projects">
+			<list>
+				<ref bean="p3" />
+				<ref bean="p4" />
+				<ref bean="p5" />
+			</list>
+		</property>
+
+	</bean>
+	<bean class="com.springcore.collections.Employee" name="e3">
+		<property name="eid" value="3" />
+		<property name="eName" value="Employee 3" />
+		<property name="projects">
+			<list>
+				<ref bean="p1" />
+				<ref bean="p2" />
+				<ref bean="p6" />
+			</list>
+		</property>
+
+	</bean>
+	<bean class="com.springcore.collections.Employee" name="e4">
+		<property name="eid" value="4" />
+		<property name="eName" value="Employee 4" />
+		<property name="projects">
+			<list>
+				<ref bean="p4" />
+				<ref bean="p5" />
+				<ref bean="p6" />
+			</list>
+		</property>
+
+	</bean>
+	<!-- department beans -->
+	<bean class="com.springcore.collections.Department" name="d1">
+		<property name="dId" value="1" />
+		<property name="dName" value="department 1" />
+		<property name="emps">
+			<list>
+				<ref bean="e1" />
+				<ref bean="e2" />
+				<ref bean="e3" />
+			</list>
+		</property>
+	</bean>
+	<bean class="com.springcore.collections.Department" name="d2">
+		<property name="dId" value="2" />
+		<property name="dName" value="department 2" />
+		<property name="emps">
+			<list>
+				<ref bean="e2" />
+				<ref bean="e3" />
+				<ref bean="e4" />
+			</list>
+		</property>
+	</bean>
+
+
+</beans>
+
+
+<!-- 
+MAP
+<map>
+<entry key="" value="" />
+</map>
+
+PROPERTIES
+<property name="">
+<props>
+<prop key="name">Value</prop>
+</props>
+
+ -->
+
+
+

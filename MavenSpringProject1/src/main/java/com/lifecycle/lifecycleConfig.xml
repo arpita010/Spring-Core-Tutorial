@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!--  init and destroy method configuration -->
+ <!-- 
+ <bean class="com.lifecycle.Person" name="p1" init-method="init" destroy-method="destroy">
+ <property name="id" value="1"/>
+ <property name="name" value="arpita" />
+ <property name="food">
+ <ref bean="f1" />
+ </property>
+ </bean>
+ 
+ <bean class="com.lifecycle.Person" name="p2" init-method="init" destroy-method="destroy">
+ <property name="id" value="2"/>
+ <property name="name" value="Tanya" />
+ <property name="food">
+ <ref bean="f2" />
+ </property>
+ </bean>
+ <bean class="com.lifecycle.Person" name="p3" init-method="init" destroy-method="destroy">
+ <property name="id" value="3"/>
+ <property name="name" value="Mittal" />
+ <property name="food">
+ <ref bean="f3" />
+ </property>
+ </bean>
+ <bean class="com.lifecycle.Person" name="p4" init-method="init" destroy-method="destroy">
+ <property name="id" value="4"/>
+ <property name="name" value="Gupta" />
+ <property name="food">
+ <ref bean="f4" />
+ </property>
+ </bean>
+  -->
+  <!-- using interface methods configuration -->
+ <bean class="com.lifecycle.Person" name="p1" >
+ <property name="id" value="1"/>
+ <property name="name" value="arpita" />
+ <property name="food">
+ <ref bean="f1" />
+ </property>
+ </bean>
+ 
+ <bean class="com.lifecycle.Person" name="p2" >
+ <property name="id" value="2"/>
+ <property name="name" value="Tanya" />
+ <property name="food">
+ <ref bean="f2" />
+ </property>
+ </bean>
+ <bean class="com.lifecycle.Person" name="p3" >
+ <property name="id" value="3"/>
+ <property name="name" value="Mittal" />
+ <property name="food">
+ <ref bean="f3" />
+ </property>
+ </bean>
+ <bean class="com.lifecycle.Person" name="p4" >
+ <property name="id" value="4"/>
+ <property name="name" value="Gupta" />
+ <property name="food">
+ <ref bean="f4" />
+ </property>
+ </bean>
+  
+ <bean class="com.lifecycle.Food" name="f1" init-method="init" destroy-method="destroy">
+ <property name="drink" value="Coca-cola"/>
+ <property name="fastfood" value="burger" />
+ </bean>
+ <bean class="com.lifecycle.Food" name="f2" init-method="init" destroy-method="destroy">
+ <property name="drink" value="tea"/>
+ <property name="fastfood" value="samosa" />
+ </bean>
+ <bean class="com.lifecycle.Food" name="f3" init-method="init" destroy-method="destroy">
+ <property name="drink" value="chai"/>
+ <property name="fastfood" value="pakoda" />
+ </bean>
+ <bean class="com.lifecycle.Food" name="f4" init-method="init" destroy-method="destroy">
+ <property name="drink" value="dudh"/>
+ <property name="fastfood" value="jalebi" />
+ </bean>
+ 
+ 
+ </beans>
